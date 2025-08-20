@@ -42,43 +42,19 @@
             margin: 0 auto 3rem;
         }
 
-        .logo-svg {
+        .logo-image {
             width: 100%;
             height: 100%;
             opacity: 0;
             animation: logoFadeIn 2s ease-out forwards;
-        }
-
-        .logo-path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: drawLogo 3s ease-out 0.5s forwards;
-            fill: none;
-            stroke: var(--dark-graphite);
-        }
-
-        .logo-path.detail {
-            stroke-dasharray: none;
-            stroke-dashoffset: 0;
-            animation: fadeInDetail 1s ease-out 2.5s forwards;
-            opacity: 0;
+            filter: drop-shadow(0 4px 12px rgba(138, 138, 138, 0.3));
+            /* SVG já tem transparência nativa */
         }
 
         @keyframes logoFadeIn {
             to { 
                 opacity: 1; 
-            }
-        }
-
-        @keyframes drawLogo {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-
-        @keyframes fadeInDetail {
-            to {
-                opacity: 1;
+                transform: scale(1.05);
             }
         }
 
@@ -407,7 +383,8 @@
     <section class="hero">
         <div class="container">
             <div class="logo-container">
-              <img src="https://i.imgur.com/8ZpLugt.jpeg" alt="ARTÍFICE Logo" class="logo-image" />
+                <!-- Logo local no repositório -->
+                <img src="logo-artifice.svg" alt="ARTÍFICE Logo" class="logo-image" />
             </div>
             
             <h1>Onde a complexidade encontra a maestria.</h1>
